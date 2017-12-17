@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="col-md-3"></div>
+  <div class="jumbotron col-md-6">
+    <h2>Login</h2>
+    <br>
+    <br>
+    <!--form #formData='ngForm' (ngSubmit)="onSubmit(formData)"-->
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input id="email" type="text" class="form-control" [(ngModel)]="email" name="email" placeholder="Email Address" required>
+    </div>
+    <br>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input id="password" type="password" class="form-control" [(ngModel)]="password" name="password" placeholder="Password" required>
+    </div>
+    <br>
+    <br>
+    <button type="submit" [disabled]="!valid" (click)="login()" class="btn btn-primary">Log in</button>
+    <br>
+    <br>
+    <a routerLink="/signup" class="alc">Don't have an account?</a>
+    <!--/form-->
+    <br>
+    <br>
+    <button class="btn btn-primary" (click)="login()">Login With Google</button>
+  </div>
+  <div class="col-md-3"></div>
+</div>
