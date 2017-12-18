@@ -1,0 +1,87 @@
+<div class="container">
+  <div class="col-md-3"></div>
+  <div class="jumbotron col-md-6">
+    <h2>Place Order</h2>
+    <br>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="glyphicon glyphicon-list-alt"></i> No of Order</span>
+      <input id="NoOfPeople" type="number" class="form-control" [(ngModel)]="NoOfOrder" (keyup)="calculateAmount()" (click)="calculateAmount()" name="NoOfOrder" placeholder="No of Order"
+        required>
+    </div>
+    <br>
+    <br>
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="glyphicon glyphicon-map-marker"></i> Address</span>
+      <input id="Address" type="text" class="form-control" [(ngModel)]="Address" name="Address" placeholder="Delivery Address"
+        required>
+    </div>
+    <br>
+    <br>
+    <div class="input-group">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-usd"></i> Amount</span>
+        <input id="Amount" type="text" disabled=true class="form-control" [(ngModel)]="Amount" name="Amount" placeholder="Amount"
+          required>
+      </div>
+      <br>
+      <br>
+    <div class="input-group">
+      <span class="input-group-addon">
+        <i class="glyphicon glyphicon-credit-card"></i> Payment Method
+      </span>
+      <select class="form-control" id="payment" [(ngModel)]="payMethod" (click)="paymentMethod()" placeholder="Payment Method">
+        <option>Card</option>
+        <option>Cash</option>
+      </select>
+    </div>
+    <br>
+    <br>
+    <hr>
+    <!-- //-------------------------------- -->
+    <div *ngIf="pMethod">
+      <h4>Credit/Debit Card Details</h4>
+      <br>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-user"></i> Card Holder's Name</span>
+        <input id="Name" type="text" class="form-control" [(ngModel)]="Name" name="Name" placeholder="Card Holder's Name" required>
+      </div>
+      <br>
+      <br>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-credit-card"></i> Card Number</span>
+        <input type="number" class="form-control" autocomplete="off" [(ngModel)]="cardNumber" maxlength="16" placeholder="Card Number"
+          required>
+      </div>
+      <br>
+      <br>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <span class="glyphicon glyphicon-calendar"></span> Card Expiry Date</span>
+        <input id="Date" type="Date" class="form-control" [(ngModel)]="ExpiryDate" name="Date" placeholder="Expiry Date" required>
+      </div>
+      <br>
+      <br>
+      <div class="input-group">
+        <span class="input-group-addon">
+          <i class="glyphicon glyphicon-credit-card"></i> CSV Number</span>
+        <input type="number" class="form-control" autocomplete="off" [(ngModel)]="CSV" maxlength="16" placeholder="CSV" required>
+      </div>
+    </div>
+    <!-- ----------------------------- -->
+
+    <br>
+    <br>
+    <div class="input-group col-md-12">
+      <button type="submit" (click)="placeOrder()" class="btn btn-primary">Place Order</button>
+      <button type="submit" (click)="back()" class="btn btn-danger" style="float:right">Back</button>
+    </div>
+
+    <div class="col-md-3"></div>
+
+  </div>
+</div>

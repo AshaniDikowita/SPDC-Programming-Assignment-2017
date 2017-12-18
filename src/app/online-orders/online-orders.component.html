@@ -1,3 +1,17 @@
-<p>
-  online-orders works!
-</p>
+<div class="container">
+  <h2 style="text-align: center; color:aliceblue">ORDER ONLINE</h2>
+  <br>
+
+  <div class="jumbotron col-md-3" *ngFor="let menu of menus" style="text-align: center; margin: 4%;">
+    <br>
+    <h3>{{menu.title}}</h3>
+    <br>
+    <h4 *ngFor="let item of menu.items">{{item}}</h4>
+    <br>
+    <br>
+    <h4>Price : {{menu.price}} /= </h4>
+    <br>
+    <button type="submit" class="btn btn-success" (click)="OrderSelection(menu.price)">Select</button>
+    <button type="submit" (click)="back()" class="btn btn-danger" style="float:right">Back</button>
+  </div>
+</div>

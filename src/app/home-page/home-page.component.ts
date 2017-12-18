@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home-page',
@@ -11,6 +12,7 @@ export class HomePageComponent implements OnInit {
   constructor(private router: Router) { }
 
   ngOnInit() {
+    
   }
 
   MakeaReservation() {
@@ -19,7 +21,7 @@ export class HomePageComponent implements OnInit {
     }
 
   OrderOnline() {
-    
+
       this.router.navigate(['/onlineOrders']);
     }
 

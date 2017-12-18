@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-
+import swal from 'sweetalert2';
 
 @Component({
   selector: 'app-login-page',
@@ -10,24 +10,35 @@ import { Router } from '@angular/router';
 export class LoginPageComponent implements OnInit {
 
   constructor(private router: Router) { }
-  email: any;
+  Mobile: any;
   password: any;
   valid: any;
+  loggedin:any;
 
   ngOnInit() {
     this.valid = true;
   }
 
   login() {
-    if (this.email == "aaa" && this.password == "123") {
-      alert("Successfully logged in!");
-      console.log(this.email)
-      console.log(this.password)
-      this.valid = true;
+    if (this.Mobile == "0710933763" && this.password == "123") {
+      swal({
+        type: 'success',
+        title: 'Successfully logged in!',
+        showConfirmButton: false,
+        timer: 1000
+      })
       this.router.navigate(['/home']);
+      this.loggedin=true;
+      window.localStorage.setItem("login", this.loggedin);
     }
     else {
-      alert("Password or Email incorrect!");
+      console.log(this.Mobile+" "+this.password);
+
+      swal(
+        'Oops...',
+        'Username or Password Incorrect!',
+        'error'
+      )
     }
   }
 }

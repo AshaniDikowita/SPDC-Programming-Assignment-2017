@@ -9,6 +9,7 @@ import { SignUpPageComponent } from './sign-up-page/sign-up-page.component';
 import { MakeReservationsComponent } from './make-reservations/make-reservations.component';
 import { HomePageComponent } from './home-page/home-page.component';
 import { OnlineOrdersComponent } from './online-orders/online-orders.component';
+import { OnlineComponent } from './online/online.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'signup', component: SignUpPageComponent },
   { path: 'makereservations', component: MakeReservationsComponent },
   { path: 'home', component: HomePageComponent },
-  { path: 'onlineOrders', component: OnlineOrdersComponent }
+  { path: 'onlineOrders', component: OnlineOrdersComponent },
+  { path: 'placeOrder', component: OnlineComponent }
 ];
 
 @NgModule({
@@ -27,7 +29,8 @@ const routes: Routes = [
     SignUpPageComponent,
     MakeReservationsComponent,
     HomePageComponent,
-    OnlineOrdersComponent
+    OnlineOrdersComponent,
+    OnlineComponent
   ],
   imports: [
     BrowserModule,
